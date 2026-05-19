@@ -70,14 +70,27 @@
 ### 文档类（`.cls`）
 
 ```
+## 主要特点
 ## 文档选项
 ## 引入方式
 ## 自定义命令
 ## 自定义环境
 ```
 
+#### 文件头
+
+文档类的第一句采用统一格式："XXX提供了一个适用于...的文档类`xxx`，以Git子模块方式引入，基于`xxx`和`xxx`。"
+
+命名来源单独一行说明。
+
+#### 参见链接
+
+在第一段之后，以纯文本URL依次注明配套Template和Minimus的链接（如"参见NotebookNeonTemplate：https://..."）。若无独立Template则不写Template链接。
+
+#### 主要特点
+
+以列表形式列出文档类的主要特性。写作时可灵活发挥，不要求与其他Class一致。
+
 ### 引入方式
 
 文档类须包含引入方式小节：Git子模块命令、`\input@path`配置、`\documentclass`声明。不写完整的MWE（MWE属于Template文档）。
-
-若存在配套的Template和推荐的Minimus，以纯文本URL形式注明（如"参见NotebookNeonTemplate：https://..."）。
