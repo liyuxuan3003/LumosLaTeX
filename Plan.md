@@ -86,7 +86,7 @@
 
 #### 参见链接
 
-在第一段之后，以纯文本URL依次注明配套Template和Minimus的链接（如"参见NotebookNeonTemplate：https://..."）。若无独立Template则不写Template链接。
+在第一段之后，以纯文本URL依次注明配套Template和Minimus的链接（如"参见NotebookNeonTemplate：https://..."）。若无需Template可不写Template链接，若无需Minimus可不写Minimus链接。
 
 #### 主要特点
 
