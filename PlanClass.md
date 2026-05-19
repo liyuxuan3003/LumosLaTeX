@@ -4,7 +4,7 @@
 
 ## 文件命名
 
-每个`.cls`对应一个同名的`.md`文件，放置在同一目录下。如`notebook-neon.cls`对应`notebook-neon.md`。
+每个文档类的文档直接写在`README.md`中，不需要单独的`.md`文件。
 
 ## 文档结构
 
