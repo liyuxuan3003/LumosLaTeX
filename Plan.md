@@ -73,6 +73,7 @@
 ## 主要特点
 ## 文档选项
 ## 引入方式
+## 最小示例
 ## 自定义命令
 ## 自定义环境
 ```
@@ -93,4 +94,8 @@
 
 ### 引入方式
 
-文档类须包含引入方式小节：Git子模块命令、`\input@path`配置、`\documentclass`声明。不写完整的MWE（MWE属于Template文档）。
+文档类须包含引入方式小节：Git子模块命令、`\input@path`配置、`\documentclass`声明。
+
+### 最小示例
+
+若文档类无独立Template但有典型使用场景（如StandaloneSilicon搭配Minimus），可在引入方式之后给出一个完整的最小示例。有Template的Class不写此节（示例属于Template文档）。
