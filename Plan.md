@@ -142,7 +142,7 @@ Template的README面向最终用户，说明如何从模板启动项目。
 
 #### 引入方式
 
-包含：Git clone命令（使用`--branch github --recurse-submodules`）、`init.sh`初始化命令。注明初始化只能执行一次。
+包含：Git clone命令、`init.sh`初始化命令。注明初始化只能执行一次。
 
 #### 目录结构
 
