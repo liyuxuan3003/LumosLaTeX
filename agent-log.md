@@ -223,3 +223,13 @@
 
 - `assets/`中`nailong-hug.png`与`ShanghaiTech_Logo_RGB.png`主题未直接引用（仅旧示例用过），是否也移除。
 - `Class/VSPBeamer`本地仓库落后于上游`dev`，待“去Class那边拉”。
+
+## 2026.09.15 22:40
+
+更正对第2点的理解：不是测可用性，而是把原仓库的系统性功能展示例子作为`dev`内容。
+
+- 确定例子为原`vsp-beamer/templates/tutorial-red.tex`（239行，包含页面结构、分栏与图片、列表与引用、代码块、尾页）。
+- 改造后写入`VSPBeamer/VSPBeamer.tex`：表头改为`\documentclass[red,tutorial,sectionpages]{vsp-beamer}`+`\graphicspath{{vsp-beamer/assets/}}`，保留`booktabs`/`array`；不再使用`\usetheme`。
+- 原例子用的`vortex-figure-18.png`已从Class移除，替换为现存素材`ShanghaiTech_Logo_RGB.png`（共4处）。
+- 删除单文件例子不再需要的`VSPBeamer/Section01.tex`，README目录树同步。提交`47aaab1`，已推二源`dev`。
+- 完整clone验证：从GitHub拉`dev`（`--recurse-submodules`）后`make -j`通过，26页。
