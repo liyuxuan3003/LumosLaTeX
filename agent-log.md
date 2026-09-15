@@ -77,3 +77,35 @@
 
 - `Minimus`版本漂移（5个模板固定`v2.0`，最新`v2.1.2`）本轮未动，待确认。
 - `PyJool`的“引入与用法说明”因无现成示例与规范，本轮未补。
+
+## 2026.09.15 15:45
+
+按指示清理残留分支（#10）。未清理任何`feature/*`、`fix/*`（#9），保持原样。
+
+### 删除遗留`github`分支
+
+根据说明，`Class`/`Package`/`Makefile`仓库的`github`分支已废弃（子模块统一跟踪`master`），`Template`仓库的`github`分支保留。
+
+| 仓库 | 删除位置 | 原指向 |
+|------|----------|--------|
+| `Class/ArticleArgon` | github | `7f6df57` |
+| `Class/BeamerBismuth` | github | `6c38d5b` |
+| `Class/IEEETran` | github | `7a82e5b` |
+| `Class/NotebookNeon` | github | `f331199` |
+| `Class/SI200MiniReview` | github | `f0f289c` |
+| `Class/StandaloneSilicon` | github | `5192022` |
+| `Package/Minimus` | origin+github | `27fdcf4` |
+| `Package/PyJool` | origin+github | `ac33793` |
+| `Makefile/MakefileLaTeX` | github | `5e996b2` |
+
+### 删除实验分支
+
+| 仓库 | 分支 | 原指向 | 备注 |
+|------|------|--------|------|
+| `Class/NotebookNeon` | `fix/use-new-document-command` | `8aa7ca5` | 已合入`dev`/`master` |
+| `Template/ArticleArgonTemplate` | `test-en-us` | `1fb5a02` | 已合入 |
+| `Template/BeamerBismuthTemplate` | `test-en-us` | `004ee1f` | 未合入，仅测试提交 |
+| `Template/NotebookNeonTemplate` | `test-en-us` | `e80fc97` | 未合入，仅测试提交 |
+| `Template/IEEETranTemplate` | `ieee` | `44aa6c6` | 已合入 |
+
+所有`github`分支的提交均可在`dev`/`master`中回溯，删除无内容损失；两个未合入的`test-en-us`仅为英语环境测试提交，SHA已存档于上表。
