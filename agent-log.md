@@ -233,3 +233,7 @@
 - 原例子用的`vortex-figure-18.png`已从Class移除，替换为现存素材`ShanghaiTech_Logo_RGB.png`（共4处）。
 - 删除单文件例子不再需要的`VSPBeamer/Section01.tex`，README目录树同步。提交`47aaab1`，已推二源`dev`。
 - 完整clone验证：从GitHub拉`dev`（`--recurse-submodules`）后`make -j`通过，26页。
+
+## 2026.09.15 22:49
+
+- 经检查，示例中未使用`booktabs`与`array`（无`\toprule`等表格线命令，也无`array`/`newcolumntype`），已从`VSPBeamer/VSPBeamer.tex`移除这两个包，重编仍26页。提交`f152c03`，已推二源`dev`。
