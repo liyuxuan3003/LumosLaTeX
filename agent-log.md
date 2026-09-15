@@ -156,3 +156,24 @@
 
 - 未推送远程（`VSPBeamer`/`VSPBeamerTemplate`的Lithium与GitHub仓库尚未创建），`.gitmodules`已写为Lithium地址。
 - 未建`master`/`github`分支，未改`MakefileLaTeX`新增标准变量，未更新Lumos根README索引。
+
+## 2026.09.15 20:53
+
+### 远程仓库
+
+- 用`autorepo`为`Class/VSPBeamer`与`Template/VSPBeamerTemplate`配置了`origin`（Lithium，已建裸仓）与`github`（GitHub，用户已建）。
+- 两个仓库的`dev`分支已推送至二源。
+
+### MakefileLaTeX
+
+- v2.3（`97182ea`）：新增`CLSS_VSP_BEAMER`、`STYS_VSP_BEAMER`、`ASSETS_VSP_BEAMER`，README变量表同步。
+- v2.3.1（`f39b32e`）：按指示移除`ASSETS_VSP_BEAMER`。两版均已推送二源。
+
+### Template
+
+- `makefile-latex`子模块更新至`v2.3.1`，`DEPS_MAIN_TEX`改用`${CLSS_VSP_BEAMER} ${STYS_VSP_BEAMER}`（`341731f`），重编通过，已推送`dev`。
+
+### 待办
+
+- Class与Template的`master`/`github`分支、tag与发布。
+- 更新`LumosLaTeX/README.md`索引。
