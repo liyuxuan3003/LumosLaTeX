@@ -111,3 +111,26 @@
 | `Template/IEEETranTemplate` | `ieee` | `44aa6c6` | 已恢复（仅本地，原本即无远端） |
 
 本轮实际只应删除无效的`github`分支，上表内容不属于清理范围。
+
+## 2026.09.15 16:09
+
+调研`Heaticy/vsp-beamer`（已克隆至`/tmp/vsp-beamer`，仅本地验证，未改动系统配置），目标为迁移为Lumos体系下的一个`Class`与一个`Template`。
+
+### 架构结论
+
+- 本质是一套Beamer主题包，不是文档类。共享实现`themes/beamerthemeVSP.sty`（446行），6个入口`themes/beamertheme*.sty`仅是`\RequirePackage[opts]{beamerthemeVSP}`。
+- 配置轴：配色`red`（默认）/`purple`/`nailong`；封面`tutorial`（默认）/`report`；`shtu`上海科技大学变体；`section/pages`自动章节页开关。组合出6个主题：`tutorial-red`、`tutorial-red-shtu`、`tutorial-purple`、`tutorial-nailong`、`report-red`、`report-nailong`。
+- 硬依赖XeLaTeX、`xeCJK`/`ctex`、系统Noto CJK SC，西文Latin Modern；另用`listings`、`tcolorbox`、`tabularx`、`ragged2e`、`etoolbox`、`tikz`。
+- 命令与环境（用户API，不可改）：`\VSPtitleframe`、`\VSPsectionframe`、`\VSPendframe`、`\VSPsetspeaker`、`\VSPsetupLogo`、`\VSPsetupNameLogo`、`\VSPbrandmark`、`\VSPspeakerblock`、`\VSPasset`、`\vspaccent`、`\vspmuted`；`vspcallout`、`vspquote`及6个彩色引用环境；`lstdefinestyle{vsp}`。
+- 特殊机制：字体尺寸由1280x720的Marp版面换算；`\AtBeginSection`自动插章节页；`\VSPasset`为恒等命令，素材靠kpathsea/TEXINPUTS按文件名解析；素材为非字体PNG（约3MB）。
+- 使用方式：`\documentclass[aspectratio=169,10pt]{beamer}`+`\usepackage[UTF8,fontset=none]{ctex}`+`\usetheme{...}`。
+- 不迁移：`skills/`与`.codex-plugin/`、`.github/`与`.gitlab-ci.yml`、`scripts/`（TDS安装与审计）、`practice/`（13MB真实文稿）、`VERSION`/`CHANGELOG.md`/`Makefile`/`AGENTS.md`。
+- 本地已用原仓库`make render`验证6个模板可编译（26页）。
+
+### 迁移方案（待讨论）
+
+- 拟新建`VSPBeamer`（Class）与`VSPBeamerTemplate`（Template），沿用`dev`/`master`（+Template的`github`）模型。
+- Class仓库扁平放置一个轻量`vsp-beamer.cls`包裹`beamer`+`ctex`并转发主题选择，同时保留6个`beamertheme*.sty`以兼容`\usetheme`；素材置于`assets/`。
+- Template仓库引入`vsp-beamer`与`makefile-latex`两个子模块，不使用Minimus；`Makefile`中`export TEXINPUTS`递归`vsp-beamer`以解析素材。
+- 需在`MakefileLaTeX`新增`CLSS_VSP_BEAMER`等变量并发布新版本。
+- 待定：仓库/文档类命名、是否做`.cls`包裹、示例文稿数量、素材解析方式、许可证与第三方素材处理、`VSP`全称与命名来源行。
