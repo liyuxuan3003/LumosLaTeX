@@ -194,3 +194,32 @@
 
 - `VSPBeamer`（`dev`/`master`=`bf5ee47`，`v1.0`）；`VSPBeamerTemplate`（`dev`=`341731f`，`master`=`20530a8`，`github`=`d54c764`，`v1.0`）。
 - `MakefileLaTeX`最新`v2.3.1`（`f39b32e`）。Template的`makefile-latex`固定于`v2.3.1`，`vsp-beamer`固定于`bf5ee47`。
+
+## 2026.09.15 21:47
+
+按指示在`Template/VSPBeamerTemplate`的`dev`上完成1~5，Class改动直接在其子模块内完成并推上游，未动`master`/`github`。
+
+### Class（子模块内修改，已推Lithium与GitHub的`dev`）
+
+- 删除6个派生主题`sty`，主`sty`重命名为`vsp-beamer-theme.sty`（`294fd66`）。
+- `vsp-beamer.cls`去掉`kvoptions`/`theme=`，改为直接声明并转发`red`/`purple`/`nailong`/`shtu`/`tutorial`/`report`/`sectionpages`/`nosectionpages`到主题包（`0af39dd`）。
+- 移除`LICENSE`、`THIRD_PARTY_ASSETS.md`（`406b71d`），并按指出移除内容测试图`vortex-figure-18.png`。
+- README改写：选项表（三组互斥+一个开关）与引入方式（`\documentclass[red,tutorial,sectionpages]{vsp-beamer}`）（`2de8c8b`）。
+- 子模块`dev`由`bf5ee47`推至`2de8c8b`，Lithium与GitHub二源同步。
+
+### Template（`dev`）
+
+- 目录`VSP/`→`VSPBeamer/`，主文件`VSP.tex`→`VSPBeamer.tex`，`PROJECT:=VSPBeamer`，`init.sh`同步。
+- 重建子模块路径为`VSPBeamer/vsp-beamer`（`2de8c8b`）与`VSPBeamer/makefile-latex`（`v2.3.1`）。
+- 主文件改为`\documentclass[red,tutorial,sectionpages]{vsp-beamer}`（`4db29bf`）。
+- `dev`已推Lithium与GitHub。
+
+### 验证
+
+- 从GitHub拉取完整`dev`（`--recurse-submodules`）到临时目录，`make -j`通过，输出`VSPBeamer.pdf`（6页，453.54x255.12pt）。
+- 抽查`red,tutorial,sectionpages`、`purple,report,shtu`、`nailong,tutorial,nosectionpages`三组选项均可编译。
+
+### 待确认
+
+- `assets/`中`nailong-hug.png`与`ShanghaiTech_Logo_RGB.png`主题未直接引用（仅旧示例用过），是否也移除。
+- `Class/VSPBeamer`本地仓库落后于上游`dev`，待“去Class那边拉”。
