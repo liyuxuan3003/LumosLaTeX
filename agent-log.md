@@ -273,3 +273,18 @@
 
 - Class README的“主要特点”中“专属奶龙主题（？）支持”含未定标记，且“提供红色和紫色两套配色”与三套配色（red/purple/nailong）不一致；待确认。
 - Class README中`\VSPasset`/`\vspaccent`/`\vspmuted`三行已被并入“内部命令”表（用户编辑所致）。
+
+## 2026.09.15 23:50
+
+与用户确认并记录分支合并约定（今后按此执行）。
+
+### 合并约定
+
+- **特性/修复分支→`dev`**：用`git merge --no-ff`（`feature/*`、`fix/*`），保留显式合并提交。历史依据：`Minimus`的`Merge branch 'feature/longdivision' into dev`、`MakefileLaTeX`的`Merge branch 'feature/doc' into dev`、`Class/*`的`Merge branch 'feature/doc' into dev`。
+- **`dev`→`master`（master有需要人工维持的差异）**：用`git merge --no-ff --no-commit dev`，在暂存区调整master侧专有差异后再提交为合并提交。`Template`均属此类：`.gitmodules`的`branch=master`、子模块gitlink钉到发布版本、`master`干净骨架等。历史依据：`ArticleArgonTemplate`的`fb65e08`/`7fc36ff`/`5f0e522`等双亲合并。
+- **`github`分支**：从`master`派生，同样保留合并提交，`.gitmodules`换为GitHub源、`branch=master`。
+- **`Class`的`master`←`dev`**：不需要`--no-ff`，可以直接快进。因为Class的`master`与`dev`内容一致、无master专有差异（`ArticleArgon`/`BeamerBismuth`/`NotebookNeon`的`master`与`dev`同一commit）。
+
+### 说明
+
+- 本次VSP发布用的`--ff-only`与`--force-with-lease`不符合上述约定，已按用户“已做的没关系”保留，不回溯重做。之后发布按上述约定执行。
