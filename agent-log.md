@@ -134,3 +134,25 @@
 - Template仓库引入`vsp-beamer`与`makefile-latex`两个子模块，不使用Minimus；`Makefile`中`export TEXINPUTS`递归`vsp-beamer`以解析素材。
 - 需在`MakefileLaTeX`新增`CLSS_VSP_BEAMER`等变量并发布新版本。
 - 待定：仓库/文档类命名、是否做`.cls`包裹、示例文稿数量、素材解析方式、许可证与第三方素材处理、`VSP`全称与命名来源行。
+
+## 2026.09.15 19:43
+
+按指示先不纠结细节，建立`Class`与`Template`并让Template可编译。素材改用`\graphicspath`，不依赖环境变量。
+
+### Class：`Class/VSPBeamer`（dev）
+
+- 迁移`beamerthemeVSP.sty`与6个主题入口`.sty`；素材拍平到`assets/`（8个PNG）；保留`LICENSE`/`THIRD_PARTY_ASSETS.md`。
+- 新增`vsp-beamer.cls`：`kvoptions`处理`theme=`选项（默认`tutorial-red`），`\LoadClass[aspectratio=169,10pt]{beamer}`，`\RequirePackage[UTF8,fontset=none]{ctex}`，最后`\usetheme{...}`。
+- 新增`README.md`（按Plan的Class结构）。提交`bf5ee47`。
+
+### Template：`Template/VSPBeamerTemplate`（dev）
+
+- 目录`VSP/`：子模块`vsp-beamer`（Lithium源，本地引导）与`makefile-latex`，加`Makefile`/`VSP.tex`/`Section01.tex`，根目录`.gitignore`/`.gitmodules`/`init.sh`/`README.md`。
+- `Makefile`包含`makefile-latex.mk`，`DEPS_MAIN_TEX`直接通配class/主题/素材，不使用Minimus。
+- 主文件用`\input@path`找类，用`\graphicspath{{vsp-beamer/assets/}}`找素材。提交`aa915bf`。
+- 已用`make -j`编译通过（6页）；用`theme=tutorial-red-shtu`验证背景与Logo确实被`\graphicspath`找到。
+
+### 未做
+
+- 未推送远程（`VSPBeamer`/`VSPBeamerTemplate`的Lithium与GitHub仓库尚未创建），`.gitmodules`已写为Lithium地址。
+- 未建`master`/`github`分支，未改`MakefileLaTeX`新增标准变量，未更新Lumos根README索引。
