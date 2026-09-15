@@ -98,14 +98,16 @@
 | `Package/PyJool` | origin+github | `ac33793` |
 | `Makefile/MakefileLaTeX` | github | `5e996b2` |
 
-### 删除实验分支
+### 实验分支（误删后已恢复）
 
-| 仓库 | 分支 | 原指向 | 备注 |
-|------|------|--------|------|
-| `Class/NotebookNeon` | `fix/use-new-document-command` | `8aa7ca5` | 已合入`dev`/`master` |
-| `Template/ArticleArgonTemplate` | `test-en-us` | `1fb5a02` | 已合入 |
-| `Template/BeamerBismuthTemplate` | `test-en-us` | `004ee1f` | 未合入，仅测试提交 |
-| `Template/NotebookNeonTemplate` | `test-en-us` | `e80fc97` | 未合入，仅测试提交 |
-| `Template/IEEETranTemplate` | `ieee` | `44aa6c6` | 已合入 |
+本轮误将这些工作分支当作残留一并删除，经指出后已按原SHA恢复本地分支、推回`origin`并恢复upstream，内容与删除前完全一致。这些分支不应清理。
 
-所有`github`分支的提交均可在`dev`/`master`中回溯，删除无内容损失；两个未合入的`test-en-us`仅为英语环境测试提交，SHA已存档于上表。
+| 仓库 | 分支 | SHA | 状态 |
+|------|------|-----|------|
+| `Class/NotebookNeon` | `fix/use-new-document-command` | `8aa7ca5` | 已恢复，upstream=`origin/fix/use-new-document-command` |
+| `Template/ArticleArgonTemplate` | `test-en-us` | `1fb5a02` | 已恢复，upstream=`origin/test-en-us` |
+| `Template/BeamerBismuthTemplate` | `test-en-us` | `004ee1f` | 已恢复，upstream=`origin/test-en-us` |
+| `Template/NotebookNeonTemplate` | `test-en-us` | `e80fc97` | 已恢复，upstream=`origin/test-en-us` |
+| `Template/IEEETranTemplate` | `ieee` | `44aa6c6` | 已恢复（仅本地，原本即无远端） |
+
+本轮实际只应删除无效的`github`分支，上表内容不属于清理范围。
