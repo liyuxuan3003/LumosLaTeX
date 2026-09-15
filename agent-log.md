@@ -288,3 +288,26 @@
 ### 说明
 
 - 本次VSP发布用的`--ff-only`与`--force-with-lease`不符合上述约定，已按用户“已做的没关系”保留，不回溯重做。之后发布按上述约定执行。
+
+## 2026.09.16 00:09
+
+全面更新所有Template的子模块并发布。
+
+### 更新内容
+
+将各Template的子模块统一到最新：`MakefileLaTeX`→`v2.3.1`（`f39b32e`）、`Minimus`→`v2.1.2`（`27fdcf4`）、`PyJool`→`v1.3`（`ac33793`）。各Class子模块与`StandaloneSilicon v2.1`本已是最新，无变动。
+
+### 发布（均只推Lithium与GitHub，按新约定）
+
+| 仓库 | 新tag | dev | master | github |
+|------|-------|-----|--------|--------|
+| ArticleArgonTemplate | `v2.1.1` | `5e84112` | `b52d0fb` | `5b07cca` |
+| BeamerBismuthTemplate | `v2.1.1` | `c95c78a` | `84df4aa` | `e5d87c8` |
+| IEEETranTemplate | `v2.1.1` | `f7b68e7` | `56cc615` | `d503516` |
+| NotebookNeonTemplate | `v2.1.1` | `83ee16c` | `17cb68d` | `09d417c` |
+| SI200MiniReviewTemplate | `v2.1.1` | `d44d994` | `b9df654` | `860e2d1` |
+| CheatsheetCarbonTemplate | `v1.2.1` | `081b74d` | `bdc4dce` | `0cce02a` |
+
+- 流程：`dev`用`submodule update --remote`后提交；`master`用`merge --no-ff --no-commit dev`，合并干净（只带gitlink，master内容与`.gitmodules`的`branch=master`保留）；`github`用`merge --no-ff --no-commit master`，保留GitHub源。均非强制推送。
+- `VSPBeamerTemplate`子模块本已最新（刚发`v2.0`），本轮未动。
+- 各模板`master`均编译通过（Article 3页、Beamer 27页、IEEETran 2页、Notebook 51页、SI200 2页、Cheatsheet 1页）。
