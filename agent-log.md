@@ -250,3 +250,10 @@
 ### 推送约定
 
 - 根据要求，开发期间只推`origin`（Lithium），不推`github`（容易阻塞）。`dev`已推至`origin`=`52af06e`；`github/dev`暂停在`f152c03`，待发布时再同步。
+
+## 2026.09.15 23:01
+
+- 清理`[fragile]`：20个带`fragile`的帧中只有两个含`verbatim`的“4. Code Examples”真正需要；`Code`帧（`\lstinputlisting`）不需要。保留两个，其余18个去掉，重编仍30页。
+- 查明BeamerBismuth为何能用`minimus-colorbox`：其`beamer-bismuth.cls`以`noamsthm`加载beamer，`beamer.cls`里`noamsthm`置`\beamer@blocksfalse`，`beamerbasetheorems.sty`的`Proof`定义在`\ifbeamer@blocks`内，因而不定义，不与Minimus冲突。
+- 因此不改Minimus，而是在`vsp-beamer.cls`的`\LoadClass`加`noamsthm`（与BeamerBismuth一致），并恢复加载`minimus-colorbox`。子模块提交`e2eb5f6`，推Lithium `dev`。
+- 验证：`BoxDefinition`与`Proof`均正常渲染；全文档30页。Template提交`b731767`，已推`origin`（Lithium）`dev`；未推`github`。
