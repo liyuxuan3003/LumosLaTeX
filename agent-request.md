@@ -16,7 +16,7 @@
 - 比较特殊的是模板`Template`下的，目前`dev`用于测试各类特性，往往包含dummy内容，而`master`保持干净可直接使用的状态（未来可改革）。
 - 需要支持两个源，`origin`指向个人服务器Lithium的私人仓库，`github`指向Github上的公开仓库。
 - 比较特殊的是模板`Template`下的，它会需要一个特殊的`github`分支：因为Lithium和Github版本需要不同的子模块源。
-- `Class`、`Package`、`Makefile`、`Template`这四个目录，和当前目录平级。
+- `Class`、`Package`、`Makefile`、`Template`这四个目录，和当前目录平级，你可以访问。
 - `Plan.md`是过去的AI总结的文档写作规范。
 
 ## 阶段目标
