@@ -18,7 +18,18 @@
 - 比较特殊的是模板`Template`下的，它会需要一个特殊的`github`分支：因为Lithium和Github版本需要不同的子模块源。
 - `Class`、`Package`、`Makefile`、`Template`这四个目录，和当前目录平级，你可以访问。
 - `Plan.md`是过去的AI总结的文档写作规范。
+- `autorepo`脚本用于自动在Lithium上创建远程仓库并添加远程引用，也可以用来添加Github的引用。
 
 ## 阶段目标
 
+### VSP Beamer
 
+- 仓库链接：https://github.com/Heaticy/vsp-beamer/tree/main
+- 我希望可以将这个vsp beamer迁移到我的体系中。
+- 我的目标：制作一个`Class`和一个`Template`，它的`Template`需要引入`MakefileLaTeX`的支持，但不用支持`Minimus`。
+- 不需要迁移它和AI Skill相关的支持。
+- 不需要迁移它的CI/CD机制。
+- 文件名称可以适当做转写符合该项目的习惯，但命令定义不要动。
+- 你可以克隆到临时目录，以观察它的结构，但是不要做任何对系统配置有影响的操作。
+- 你需要调研清楚它的架构：提供了哪些主题和配置选项，有哪些特殊的机制。
+- 你需要制定一个迁移方案，我们讨论后，执行。
