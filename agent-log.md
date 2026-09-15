@@ -48,3 +48,32 @@
 - 各仓库工作树干净，所有`feature/*`均已合入`dev`，各仓库`master`与最新tag一致（`MakefileLaTeX`因未推送提交除外）。
 - 文档与代码交叉核对：Class文档选项与`.cls`一致；Minimus命令/环境文档覆盖完整（缺项均为带`@`的内部宏或计数器重定义）。
 - 实测`ArticleArgonTemplate`（`dev`，`Minimus v2.0`）可正常`make -j`编译。
+
+## 2026.09.15 15:35
+
+按`agent-request.md`推进第一轮修复与发布。
+
+### MakefileLaTeX
+
+- README变量表补充`CLSS_CHEATSHEET_CARBON`，提交`e585c34`。
+- 合并`dev`至`master`，打tag`v2.2`，推送`dev`、`master`、`v2.2`至`origin`与`github`。
+
+### CheatsheetCarbonTemplate
+
+- `dev`更新`makefile-latex`子模块至`v2.2`（`f21d39e`），`master`合并`dev`（`4345d7f`）。
+- 修复`github`分支：合并`master`并将`.gitmodules`全部改为GitHub源（`c0df758`），此前该分支仍指向Lithium，GitHub用户无法初始化子模块。
+- 打tag`v1.2`，推送`dev`、`master`、`github`、`v1.2`至`origin`与`github`。
+
+### PyJool
+
+- 修复README笔误“PyJool了提供了”为“PyJool提供了”（`ac33793`），同步`dev`、`master`、`github`。
+- 打tag`v1.3`，推送两源；按指示不更新下游模板的`pyjool`子模块。
+
+### 上游跟踪
+
+- 为`Class/CheatsheetCarbon`的`dev`/`master`、`Class/SI200MiniReview`的`master`、`Template/CheatsheetCarbonTemplate`的`github`/`master`设置upstream。
+
+### 未处理
+
+- `Minimus`版本漂移（5个模板固定`v2.0`，最新`v2.1.2`）本轮未动，待确认。
+- `PyJool`的“引入与用法说明”因无现成示例与规范，本轮未补。
