@@ -257,3 +257,19 @@
 - 查明BeamerBismuth为何能用`minimus-colorbox`：其`beamer-bismuth.cls`以`noamsthm`加载beamer，`beamer.cls`里`noamsthm`置`\beamer@blocksfalse`，`beamerbasetheorems.sty`的`Proof`定义在`\ifbeamer@blocks`内，因而不定义，不与Minimus冲突。
 - 因此不改Minimus，而是在`vsp-beamer.cls`的`\LoadClass`加`noamsthm`（与BeamerBismuth一致），并恢复加载`minimus-colorbox`。子模块提交`e2eb5f6`，推Lithium `dev`。
 - 验证：`BoxDefinition`与`Proof`均正常渲染；全文档30页。Template提交`b731767`，已推`origin`（Lithium）`dev`；未推`github`。
+
+## 2026.09.15 23:45
+
+提交用户修改的两个README并完成v2.0发布。
+
+### 提交与发布
+
+- Class README（子模块内，`d3b9d4a`）与Template README（`7bdd6bb`）已提交，Template的`vsp-beamer`子模块同步。
+- `VSPBeamer`：`dev`与`master`更新至`d3b9d4a`，打tag`v2.0`（选项机制等为破坏性变更），推Lithium与GitHub。
+- `VSPBeamerTemplate`：从`dev`重建`master`=干净骨架（`f081abd`，子模块跟踪master），基于`master`重建`github`（`14bb368`，GitHub源）；打tag`v2.0`；`dev`=`7bdd6bb`。因旧`master`/`github`与`dev`分叉，这两个分支用`--force-with-lease`推送。
+- 完整发布路径验证：从GitHub拉`github`分支（`--recurse-submodules`）→ `vsp-beamer v2.0`、`minimus v2.1.2`、`makefile-latex v2.3.1`，`make -j`通过（骨架4页，453.54x255.12pt）。
+
+### 遗留
+
+- Class README的“主要特点”中“专属奶龙主题（？）支持”含未定标记，且“提供红色和紫色两套配色”与三套配色（red/purple/nailong）不一致；待确认。
+- Class README中`\VSPasset`/`\vspaccent`/`\vspmuted`三行已被并入“内部命令”表（用户编辑所致）。
