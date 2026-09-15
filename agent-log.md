@@ -177,3 +177,20 @@
 
 - Class与Template的`master`/`github`分支、tag与发布。
 - 更新`LumosLaTeX/README.md`索引。
+
+## 2026.09.15 20:59
+
+### 建设与发布
+
+- `Class/VSPBeamer`：从`dev`建`master`，打tag`v1.0`，`dev`/`master`/`v1.0`推二源。无`github`分支（Class层不需要）。
+- `Template/VSPBeamerTemplate`：从`dev`建`master`（`.gitmodules`改`branch=master`），打tag`v1.0`；再基于`master`建`github`分支（`.gitmodules`换为GitHub源）。`dev`/`master`/`github`/`v1.0`推二源。
+- 远端确认：`VSPBeamer`有`dev`/`master`与`v1.0`；`VSPBeamerTemplate`有`dev`/`master`/`github`与`v1.0`，两源一致。
+
+### 元文档
+
+- `LumosLaTeX/README.md`索引加入`VSPBeamer`（文档类）与`VSPBeamerTemplate`（模板），提交`431ef18`。
+
+### 当前状态
+
+- `VSPBeamer`（`dev`/`master`=`bf5ee47`，`v1.0`）；`VSPBeamerTemplate`（`dev`=`341731f`，`master`=`20530a8`，`github`=`d54c764`，`v1.0`）。
+- `MakefileLaTeX`最新`v2.3.1`（`f39b32e`）。Template的`makefile-latex`固定于`v2.3.1`，`vsp-beamer`固定于`bf5ee47`。
