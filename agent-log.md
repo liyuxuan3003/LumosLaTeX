@@ -311,3 +311,12 @@
 - 流程：`dev`用`submodule update --remote`后提交；`master`用`merge --no-ff --no-commit dev`，合并干净（只带gitlink，master内容与`.gitmodules`的`branch=master`保留）；`github`用`merge --no-ff --no-commit master`，保留GitHub源。均非强制推送。
 - `VSPBeamerTemplate`子模块本已最新（刚发`v2.0`），本轮未动。
 - 各模板`master`均编译通过（Article 3页、Beamer 27页、IEEETran 2页、Notebook 51页、SI200 2页、Cheatsheet 1页）。
+
+## 2026.09.16 00:23
+
+用户修改`VSPBeamerTemplate`的`master`默认骨架，review后提交并发布`v2.0.1`。
+
+- 用户的修改：`VSPBeamer.tex`改为封面→`\VSPsectionframe{Contents}{}`→目录→`\input{Section01.tex}`→尾页，标题改为“幻灯片模板”、讲者为`Yuxuan Li`/`SIST VSPLab`；新增空文件`Section01.tex`。
+- review发现README目录树未列`Section01.tex`，已补上；`master`编译通过（4页）。提交`4099a97`。
+- `master`→`github`用`merge --no-ff --no-commit master`（`d20304d`），打tag`v2.0.1`，推Lithium与GitHub。
+- 公开发布路径验证：从GitHub拉`github`分支（`--recurse-submodules`）后`make -j`通过（4页，453.54x255.12pt）。
