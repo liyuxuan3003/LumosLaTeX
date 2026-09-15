@@ -17,6 +17,7 @@ LumosLaTeX是一套LaTeX模板工程的元文档仓库，收集了所有子仓�
 | [IEEETran](https://github.com/liyuxuan3003/IEEETran) | IEEE会议文档类 |
 | [SI200MiniReview](https://github.com/liyuxuan3003/SI200MiniReview) | SI200综述文档类 |
 | [CheatsheetCarbon](https://github.com/liyuxuan3003/CheatsheetCarbon) | 复习提纲文档类 |
+| [VSPBeamer](https://github.com/liyuxuan3003/VSPBeamer) | VSP风格幻灯片文档类 |
 
 ### 宏包（Package）
 
@@ -41,3 +42,4 @@ LumosLaTeX是一套LaTeX模板工程的元文档仓库，收集了所有子仓�
 | [IEEETranTemplate](https://github.com/liyuxuan3003/IEEETranTemplate) | IEEE会议模板 |
 | [SI200MiniReviewTemplate](https://github.com/liyuxuan3003/SI200MiniReviewTemplate) | SI200小综述模板 |
 | [CheatsheetCarbonTemplate](https://github.com/liyuxuan3003/CheatsheetCarbonTemplate) | 复习提纲模板 |
+| [VSPBeamerTemplate](https://github.com/liyuxuan3003/VSPBeamerTemplate) | VSP风格幻灯片模板 |
