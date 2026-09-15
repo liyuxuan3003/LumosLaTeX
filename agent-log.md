@@ -237,3 +237,16 @@
 ## 2026.09.15 22:49
 
 - 经检查，示例中未使用`booktabs`与`array`（无`\toprule`等表格线命令，也无`array`/`newcolumntype`），已从`VSPBeamer/VSPBeamer.tex`移除这两个包，重编仍26页。提交`f152c03`，已推二源`dev`。
+
+## 2026.09.15 22:57
+
+引入Minimus并测试自定义环境。
+
+- 子模块新增`VSPBeamer/minimus`（`v2.1.2`）。主文件`\input@path`加上`minimus`，加载`minimus-section`、`minimus-text`、`minimus-math`、`minimus-float`、`minimus-code`、`minimus-reference`、`minimus-bibtex`（未加载`minimus-colorbox`）。
+- `Makefile`的`DEPS_MAIN_TEX`加入`${STYS_MINIMUS}`，README目录树与子模块表同步。
+- 添加测试帧与`code/example.py`。验证结果：`Figure`、`Table`（三线表）、`Code`（Python高亮）均正常，能正确生成图题/表题/代码题；全文档30页。提交`60e1cf2`、`52af06e`。
+- 冲突：`minimus-colorbox`在beamer下报`Environment 'Proof' already defined`，因为beamer的`beamerbasetheorems.sty`已定义`Proof`。隔离测试（`beamer`+`minimus-colorbox`）复现。待定如何处理。
+
+### 推送约定
+
+- 根据要求，开发期间只推`origin`（Lithium），不推`github`（容易阻塞）。`dev`已推至`origin`=`52af06e`；`github/dev`暂停在`f152c03`，待发布时再同步。
